@@ -272,7 +272,7 @@ searchResults = withData $ \(params :: Params) -> do
                    then return []
                    else liftIO $ E.catch (search fs SearchQuery{
                                                   queryPatterns = patterns
-                                                , queryWholeWords = True
+                                                , queryWholeWords = False
                                                 , queryMatchAll = True
                                                 , queryIgnoreCase = True })
                                        -- catch error, because newer versions of git
